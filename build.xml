@@ -19,7 +19,7 @@
 			<include name="sqljdbc4.jar" />
 		</fileset>
 	</path>
-
+ 
 	<target name="env_info" description="Prints out your current ant environment.">
 		<splash imageurl="${logo.url}" />
 		<echo message="${ant.version}"/>
@@ -30,16 +30,27 @@
 		<echoproperties prefix="project."/>
 	</target>
 
-	<target name="set_version" description="Sets the version number for the build" >
-		<if>
-			<equals trim="true" arg1="${build.type}" arg2="trunk" />
-			<then>
-				<property name="build.version" value="${env.BUILD_NUMBER}"	/>
-			</then>
-			<else>
-				<property name="build.version" value="${env.CURRENT_VERSION}"	/>
-			</else>
-		</if>
+	<!-- **************** DB Stored Procedures Targets *****************-->
+	<target name="deploy_sproc" description="Deploys the Stored Procs to Development" >
+		<property name="database.server" value="${dev.database.server}"/>
+		<property name="database.name" value="${dev.database.name}"/>
+		<var name="database.scripts.dir" value="${cherry.dir.sprocs}"/>
+		<antcall target="run_sql_scripts" />
+	</target>
+	
+	<target name="run_sql_scripts" >
+		<echo> About to connect to server ${database.server} database ${database.name}</echo>
+		<echo>${libs.dir}</echo>
+		<sql driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" strictDelimiterMatching="false"
+		url="jdbc:sqlserver://${database.server};DatabaseName=${database.name};integratedSecurity=true"
+		userid="" password="" delimiter="GO" keepformat="true" classpathref="classpath">
+		
+		<path>
+			<fileset dir="${database.scripts.dir}">
+				<include name="*.sql" />
+			</fileset>
+		</path>
+		</sql>
 	</target>
 	
 
