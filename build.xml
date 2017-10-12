@@ -32,6 +32,7 @@
 
 	<!-- **************** DB Stored Procedures Targets *****************-->
 	<target name="deploy_sproc" description="Deploys the Stored Procs to Development" >
+		<echo>Server:  ${dev.database.server}</echo>
 		<property name="database.server" value="${dev.database.server}"/>
 		<property name="database.name" value="${dev.database.name}"/>
 		<var name="database.scripts.dir" value="${cherry.dir.sprocs}"/>
