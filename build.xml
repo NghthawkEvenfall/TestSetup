@@ -15,7 +15,7 @@
 	<property file="build.properties" />
 	
 	<path id="classpath">
-		<fileset dir="${libs.dir}">
+		<fileset dir="C:\Program Files\Microsoft JDBC SQL Server\sqljdbc_4.0\enu">
 			<include name="sqljdbc4.jar" />
 		</fileset>
 	</path>
