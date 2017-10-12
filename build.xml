@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<project name="buildit" basedir="./" >
+	<description>This project builds and deploys Theatre Service code.</description>
+
+	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
+	<taskdef name="purge" classname="com.dallaway.ant.Purge"/>
+
+	<!--<import file="C:\Program Files (x86)\Jenkins\jobs\Release_Management\workspace\commonlib\ontime.xml"/>-->
+	<property environment="env" />
+	<!--<include file="${env.HUDSON_HOME}/jobs/Release_Management/workspace/commonlib/track3.xml" optional="true" as="track"/>-->
+
+	<property name="scriptbase" value="." />
+	<property name="build.type" value="${env.build.type}" />
+	<property file="build.properties" />
+	
+	<path id="classpath">
+		<fileset dir="${libs.dir}">
+			<include name="sqljdbc4.jar" />
+		</fileset>
+	</path>
+
+	<target name="env_info" description="Prints out your current ant environment.">
+		<splash imageurl="${logo.url}" />
+		<echo message="${ant.version}"/>
+		<echo message="Basedir: ${basedir}"/>
+		<echo message="OS: ${os.name} ${os.arch} ${os.version}"/>
+		<echo message="JVM: ${java.vm.vendor} ${java.vm.name} ${java.vm.version}"/>
+		<echoproperties prefix="env."/>
+		<echoproperties prefix="project."/>
+	</target>
+
+	<target name="set_version" description="Sets the version number for the build" >
+		<if>
+			<equals trim="true" arg1="${build.type}" arg2="trunk" />
+			<then>
+				<property name="build.version" value="${env.BUILD_NUMBER}"	/>
+			</then>
+			<else>
+				<property name="build.version" value="${env.CURRENT_VERSION}"	/>
+			</else>
+		</if>
+	</target>
+	
+
+	
+	
+</project>
