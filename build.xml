@@ -42,6 +42,7 @@
 	<target name="run_sql_scripts" >
 		<echo> About to connect to server ${database.server} database ${database.name}</echo>
 		<echo>${libs.dir}</echo>
+		<!--
 		<sql driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" strictDelimiterMatching="false"
 		url="jdbc:sqlserver://${database.server};DatabaseName=${database.name};integratedSecurity=true"
 		userid="" password="" delimiter="GO" keepformat="true" classpathref="classpath">
@@ -52,6 +53,7 @@
 			</fileset>
 		</path>
 		</sql>
+		-->
 	</target>
 	
 
