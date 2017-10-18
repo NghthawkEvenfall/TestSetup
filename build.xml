@@ -47,13 +47,13 @@
 		url="jdbc:mysql://${database.server};DatabaseName=${database.name};"
 		userid="root" password="mcrane" classpathref="classpath">
 		
-		<!--
+		
 		<path>
 			<fileset dir="${database.scripts.dir}">
 				<include name="*.sql" />
 			</fileset>
 		</path>
-		-->
+		
 		</sql>
 		
 		
