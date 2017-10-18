@@ -1,9 +1,4 @@
-delimiter //
-
 CREATE PROCEDURE `WEB_SERVICE_MOBILE_SIGNUP_PUT`(cfa_id INT)
 BEGIN
   SELECT NOW();
 END
-
-delimiter ;
-
