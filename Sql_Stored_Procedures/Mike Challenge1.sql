@@ -1,4 +1,6 @@
-CREATE PROCEDURE `WEB_SERVICE_MOBILE_SIGNUP_PUT`(cfa_id INT)
-BEGIN
+delimiter //
+create procedure WEB_SERVICE_MOBILE_SIGNUP_PUT() 
+begin 
   SELECT NOW();
-END
+end;//
+delimiter ;
