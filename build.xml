@@ -14,9 +14,16 @@
 	<property name="build.type" value="${env.build.type}" />
 	<property file="build.properties" />
 	
+	<!--
 	<path id="classpath">
 		<fileset dir="C:\Program Files\Microsoft JDBC SQL Server\sqljdbc_4.0\enu">
 			<include name="sqljdbc4.jar" />
+		</fileset>
+	</path>
+	-->
+	<path id="classpath">
+		<fileset dir="C:\Program Files\mysql-connector-java-5.1.44">
+			<include name="mysql-connector-java-5.1.44-bin.jar" />
 		</fileset>
 	</path>
  
@@ -41,7 +48,7 @@
 	
 	<target name="run_sql_scripts" >
 		<echo> About to connect to server ${database.server} database ${database.name}</echo>
-		<echo>${libs.dir}</echo>
+		<!--<echo>${libs.dir}</echo>-->
 		
 		<mysql driver="com.mysql.jdbc.Driver" strictDelimiterMatching="false"
 		url="jdbc:mysql://${database.server};DatabaseName=${database.name};integratedSecurity=true"
