@@ -35,7 +35,7 @@
 		<echo>Server:  ${dev.database.server}</echo>
 		<property name="database.server" value="${dev.database.server}"/>
 		<property name="database.name" value="${dev.database.name}"/>
-		<var name="database.scripts.dir" value="${cherry.dir.sprocs}"/>
+		<!--<var name="database.scripts.dir" value="${cherry.dir.sprocs}"/>-->
 		<antcall target="run_sql_scripts" />
 	</target>
 	
@@ -43,16 +43,18 @@
 		<echo> About to connect to server ${database.server} database ${database.name}</echo>
 		<echo>${libs.dir}</echo>
 		
-		<sql driver="com.mysql.jdbc.driver" 
-		url="jdbc:sqlserver://${database.server};DatabaseName=${database.name};"
+		<mysql driver="com.mysql.jdbc.driver" 
+		url="jdbc:mysql://${database.server};DatabaseName=${database.name};"
 		userid="root" password="mcrane" classpathref="classpath">
 		
+		<!--
 		<path>
 			<fileset dir="${database.scripts.dir}">
 				<include name="*.sql" />
 			</fileset>
 		</path>
-		</sql>
+		-->
+		</mysql>
 		
 		
 		<!--
