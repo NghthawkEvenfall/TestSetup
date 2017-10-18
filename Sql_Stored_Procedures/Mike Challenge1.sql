@@ -2,4 +2,3 @@ USE `game`;
 DROP procedure IF EXISTS `WEB_SERVICE_MOBILE_SIGNUP_PUT`;
 
 DELIMITER $$
-USE `game`$$
