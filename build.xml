@@ -15,7 +15,7 @@
 	<property file="build.properties" />
 	
 	<path id="classpath">
-		<fileset dir="C:\\Program Files (x86)\\MySQL\\Connector.J 5.1\\">
+		<fileset dir="C:\Program Files\Microsoft JDBC MYSQL Server">
 			<include name="mysql-connector-java-5.1.44-bin.jar" />
 		</fileset>
 	</path>
