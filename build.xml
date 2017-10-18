@@ -43,7 +43,7 @@
 		<echo> About to connect to server ${database.server} database ${database.name}</echo>
 		<echo>${libs.dir}</echo>
 		
-		<mysql driver="com.mysql.jdbc.driver" 
+		<sql driver="com.mysql.jdbc.driver" 
 		url="jdbc:mysql://${database.server};DatabaseName=${database.name};"
 		userid="root" password="mcrane" classpathref="classpath">
 		
@@ -54,7 +54,7 @@
 			</fileset>
 		</path>
 		-->
-		</mysql>
+		</sql>
 		
 		
 		<!--
