@@ -44,7 +44,7 @@
 		<echo>${libs.dir}</echo>
 		
 		<sql driver="com.mysql.jdbc.Driver" url="jdbc:mysql://${database.server}/${database.name};"
-		userid="root" password="mcrane" useSSL="false" classpathref="classpath">
+		userid="root" password="mcrane" classpathref="classpath">
 		
 		<path>
 			<fileset dir="${database.scripts.dir}">
