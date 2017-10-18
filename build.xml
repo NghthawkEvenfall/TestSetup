@@ -48,7 +48,7 @@
 	
 	<target name="run_sql_scripts" >
 		<echo> About to connect to server ${database.server} database ${database.name}</echo>
-		<!--<echo>${libs.dir}</echo>-->
+		<echo>${classpath}</echo>
 		
 		<mysql driver="com.mysql.jdbc.Driver" strictDelimiterMatching="false"
 		url="jdbc:mysql://${database.server};DatabaseName=${database.name};integratedSecurity=true"
