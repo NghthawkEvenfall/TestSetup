@@ -42,6 +42,19 @@
 	<target name="run_sql_scripts" >
 		<echo> About to connect to server ${database.server} database ${database.name}</echo>
 		<echo>${libs.dir}</echo>
+		
+		<sql driver="com.mysql.jdbc.driver" 
+		url="jdbc:sqlserver://${database.server};DatabaseName=${database.name};"
+		userid="root" password="mcrane" classpathref="classpath">
+		
+		<path>
+			<fileset dir="${database.scripts.dir}">
+				<include name="*.sql" />
+			</fileset>
+		</path>
+		</sql>
+		
+		
 		<!--
 		<sql driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" strictDelimiterMatching="false"
 		url="jdbc:sqlserver://${database.server};DatabaseName=${database.name};integratedSecurity=true"
