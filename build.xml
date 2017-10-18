@@ -14,15 +14,8 @@
 	<property name="build.type" value="${env.build.type}" />
 	<property file="build.properties" />
 	
-	<!--
 	<path id="classpath">
-		<fileset dir="C:\Program Files\Microsoft JDBC SQL Server\sqljdbc_4.0\enu">
-			<include name="sqljdbc4.jar" />
-		</fileset>
-	</path>
-	-->
-	<path id="classpath">
-		<fileset dir="C:\Program Files\mysql-connector-java-5.1.44">
+		<fileset dir="C:\Program Files (x86)\MySQL\Connector.J 5.1">
 			<include name="mysql-connector-java-5.1.44-bin.jar" />
 		</fileset>
 	</path>
@@ -42,16 +35,16 @@
 		<echo>Server:  ${dev.database.server}</echo>
 		<property name="database.server" value="${dev.database.server}"/>
 		<property name="database.name" value="${dev.database.name}"/>
-		<!--<var name="database.scripts.dir" value="${cherry.dir.sprocs}"/>-->
+		<var name="database.scripts.dir" value="${cherry.dir.sprocs}"/>
 		<antcall target="run_sql_scripts" />
 	</target>
 	
 	<target name="run_sql_scripts" >
 		<echo> About to connect to server ${database.server} database ${database.name}</echo>
-		<echo>${classpath}</echo>
-		
-		<mysql driver="com.mysql.jdbc.Driver" strictDelimiterMatching="false"
-		url="jdbc:mysql://${database.server};DatabaseName=${database.name};integratedSecurity=true"
+		<echo>${libs.dir}</echo>
+		<!--
+		<sql driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" strictDelimiterMatching="false"
+		url="jdbc:sqlserver://${database.server};DatabaseName=${database.name};integratedSecurity=true"
 		userid="" password="" delimiter="GO" keepformat="true" classpathref="classpath">
 		
 		<path>
@@ -59,8 +52,8 @@
 				<include name="*.sql" />
 			</fileset>
 		</path>
-		</mysql>
-		
+		</sql>
+		-->
 	</target>
 	
 
