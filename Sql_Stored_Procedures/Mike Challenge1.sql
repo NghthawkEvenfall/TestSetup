@@ -7,4 +7,4 @@ BEGIN
   SELECT 1
   INTO o_position
 
-END;
+END
