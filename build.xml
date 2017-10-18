@@ -44,7 +44,7 @@
 		<echo>${libs.dir}</echo>
 		
 		<sql driver="com.mysql.jdbc.Driver" 
-		url="jdbc:mysql://${database.server}:${database.dev_port};DatabaseName=${database.name};"
+		url="jdbc:mysql://${database.server}:${database.dev_port};"
 		userid="root" password="mcrane" classpathref="classpath">
 		
 		
