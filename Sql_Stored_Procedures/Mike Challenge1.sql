@@ -1,6 +1,6 @@
-delimiter //
-create procedure WEB_SERVICE_MOBILE_SIGNUP_PUT() 
-begin 
+DELIMITER //
+CREATE PROCEDURE WEB_SERVICE_MOBILE_SIGNUP_PUT() 
+BEGIN 
   SELECT NOW();
-end;//
-delimiter ;
+END;//
+DELIMITER ;
