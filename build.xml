@@ -35,7 +35,7 @@
 		<echo>Server:  ${dev.database.server}</echo>
 		<property name="database.server" value="${dev.database.server}"/>
 		<property name="database.name" value="${dev.database.name}"/>
-		<var name="database.scripts.dir" value="${cherry.dir.sprocs}"/>
+		<!--<var name="database.scripts.dir" value="${cherry.dir.sprocs}"/>-->
 		<antcall target="run_sql_scripts" />
 	</target>
 	
