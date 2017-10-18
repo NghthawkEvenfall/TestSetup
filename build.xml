@@ -16,7 +16,7 @@
 	
 	<path id="classpath">
 		<fileset dir="C:\Program Files\Microsoft JDBC MYSQL Server">
-			<include name="mysql-connector-java-5.1.44-bin.jar" />
+			<include name="mysql_connector_java_5_1_44_bin.jar" />
 		</fileset>
 	</path>
  
